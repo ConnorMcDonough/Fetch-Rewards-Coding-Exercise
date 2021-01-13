@@ -8,7 +8,6 @@ class Repository {
   List<Data> dataList = [];
 
   Future<List<Data>> fetchSortedList() async {
-    int temp = 0;
     List<dynamic> responseJSON = jsonDecode(await api.fetchRawJSON());
 
     dataList = responseJSON.map((d) => new Data.fromJson(d)).toList();
